@@ -1,25 +1,34 @@
 package br.com.dpsp.app.log.service;
 
-import br.com.dpsp.app.log.dto.NotaFiscalDTO;
-import br.com.dpsp.app.log.repository.NotaFiscalRepository;
+import br.com.dpsp.app.log.dto.LogDTO;
+import br.com.dpsp.app.log.repository.LogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service public class LogService
+{
 
-@Service
-public class NotaFiscalService {
+	@Autowired private LogRepository logRepository;
 
-    @Autowired
-    private NotaFiscalRepository notaFiscalRepository;
+	public LogDTO findBySequencia( String sequencia )
+	{
+		return logRepository
+				.findBySequencia( sequencia );
+	}
 
-    public NotaFiscalDTO findByCnpjEmitenteENumeroNotaFiscal(String cnpjEmitente, String numeroNotaFiscal) {
-        return notaFiscalRepository.findByCnpjEmitenteENumeroNotaFiscal(cnpjEmitente, numeroNotaFiscal);
-    }
+	public LogDTO findBySequenciaTransacao( String sequencia,
+			String origem )
+	{
+		return logRepository
+				.findBySequenciaTransacao( sequencia, origem );
+	}
 
-    public List<NotaFiscalDTO> findAll() {
-        return notaFiscalRepository.findAll();
-    }
+
+	public List<LogDTO> findAll( )
+	{
+		return logRepository.findAll( );
+	}
 
 }

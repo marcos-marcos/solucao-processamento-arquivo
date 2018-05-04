@@ -1,0 +1,11 @@
+br/com/dpsp/MongoDBPropertiesConfig.class
+br/com/dpsp/app/arquivo/controller/ArquivoLogController.class
+br/com/dpsp/app/log/repository/LogRepository.class
+br/com/dpsp/app/log/mapper/LogResultSetExtractor.class
+br/com/dpsp/app/log/service/LogService.class
+br/com/dpsp/app/log/dto/ArquivoDTO.class
+br/com/dpsp/DisponibilizadorAppConfig.class
+br/com/dpsp/app/arquivo/repository/MongoDBRepository.class
+br/com/dpsp/app/log/controller/LogController.class
+br/com/dpsp/app/log/dto/LogDTO.class
+br/com/dpsp/app/arquivo/service/ArquivoLogService.class

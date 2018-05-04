@@ -1,0 +1,8 @@
+/home/marcos/dev/solucao-processamento-arquivo/processador/src/main/java/br/com/dpsp/app/exception/FileException.java
+/home/marcos/dev/solucao-processamento-arquivo/processador/src/main/java/br/com/dpsp/app/ArquivoLogConsumer.java
+/home/marcos/dev/solucao-processamento-arquivo/processador/src/main/java/br/com/dpsp/app/log/repository/LogTraceRepository.java
+/home/marcos/dev/solucao-processamento-arquivo/processador/src/main/java/br/com/dpsp/app/exception/BusinessException.java
+/home/marcos/dev/solucao-processamento-arquivo/processador/src/main/java/br/com/dpsp/app/log/model/Log.java
+/home/marcos/dev/solucao-processamento-arquivo/processador/src/main/java/br/com/dpsp/ProcessadorAppConfig.java
+/home/marcos/dev/solucao-processamento-arquivo/processador/src/main/java/br/com/dpsp/app/ArquivoLogSender.java
+/home/marcos/dev/solucao-processamento-arquivo/processador/src/main/java/br/com/dpsp/app/log/service/LogTraceService.java

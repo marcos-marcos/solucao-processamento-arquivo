@@ -6,21 +6,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
-import br.com.dpsp.app.log.service.NotaFiscalService;
+import br.com.dpsp.app.log.service.LogTraceService;
 
-@Component
-public class ArquivoNotaFiscalConsumer {
+@Component public class ArquivoLogConsumer
+{
 
-    private Logger LOGGER = LoggerFactory.getLogger(ArquivoNotaFiscalConsumer.class);
+	private Logger LOGGER = LoggerFactory.getLogger( ArquivoLogConsumer.class );
 
-    @Autowired
-    private NotaFiscalService notaFiscalService;
+	@Autowired private LogTraceService logService;
 
-    @JmsListener(destination = ProcessadorAppConfig.NOTA_FISCALQUEUE)
-    public void receive(String xml) {
-        LOGGER.debug("Iniciando processamento arquivo");
-        notaFiscalService.processar(xml);
-        LOGGER.debug("Finalizando processamento arquivo");
-    }
+	@JmsListener( destination = ProcessadorAppConfig.LOGS_QUEUE ) public void receive( String data )
+	{
+		LOGGER.debug( "Iniciando processamento arquivo" );
+		logService.processar( data );
+		LOGGER.debug( "Finalizando processamento arquivo" );
+	}
 
 }

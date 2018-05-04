@@ -1,0 +1,11 @@
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/app/arquivo/controller/ArquivoLogController.java
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/app/log/mapper/LogResultSetExtractor.java
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/app/arquivo/service/ArquivoLogService.java
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/MongoDBPropertiesConfig.java
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/DisponibilizadorAppConfig.java
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/app/log/controller/LogController.java
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/app/log/repository/LogRepository.java
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/app/log/service/LogService.java
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/app/log/dto/ArquivoDTO.java
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/app/log/dto/LogDTO.java
+/home/marcos/dev/solucao-processamento-arquivo/disponibilizador/src/main/java/br/com/dpsp/app/arquivo/repository/MongoDBRepository.java

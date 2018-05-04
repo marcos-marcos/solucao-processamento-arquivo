@@ -14,21 +14,23 @@ import static br.com.dpsp.app.log.dto.ArquivoDTO.ARQUIVO_ID;
 import static br.com.dpsp.app.log.dto.ArquivoDTO.criar;
 import static br.com.dpsp.app.log.dto.ArquivoDTO.criarComConteudo;
 
-@Service
-public class NotaFiscalArquivoService {
+@Service public class ArquivoLogService
+{
 
-    @Autowired
-    private MongoDBRepository mongoDBRepository;
+	@Autowired private MongoDBRepository mongoDBRepository;
 
-    public List<ArquivoDTO> findAll() {
-        final List<ArquivoDTO> arquivoDTOS = new ArrayList<>();
-        mongoDBRepository.find().forEach(document -> arquivoDTOS.add(criar(document)));
-        return arquivoDTOS;
-    }
+	public List<ArquivoDTO> findAll( )
+	{
+		final List<ArquivoDTO> arquivoDTOS = new ArrayList<>( );
+		mongoDBRepository.find( ).forEach( document -> arquivoDTOS.add( criar( document ) ) );
+		return arquivoDTOS;
+	}
 
-    public ArquivoDTO findById(String id) {
-        final Document document = mongoDBRepository.findFirst(new Document(ARQUIVO_ID, new ObjectId(id)));
-        return criarComConteudo(document);
-    }
+	public ArquivoDTO findById( String id )
+	{
+		final Document document = mongoDBRepository
+				.findFirst( new Document( ARQUIVO_ID, new ObjectId( id ) ) );
+		return criarComConteudo( document );
+	}
 
 }

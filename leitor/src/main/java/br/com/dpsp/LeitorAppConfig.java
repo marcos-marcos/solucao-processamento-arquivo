@@ -1,4 +1,4 @@
-package br.com.emmanuelneri;
+package br.com.dpsp;
 
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,33 +14,30 @@ import org.springframework.integration.dsl.support.Transformers;
 import javax.jms.Queue;
 import java.io.File;
 
-@SpringBootApplication
-@EnableIntegration
-public class LeitorAppConfig {
+@SpringBootApplication @EnableIntegration public class LeitorAppConfig
+{
 
-    private static final String ARQUIVO_QUEUE = "logs.queue";
+	private static final String ARQUIVO_QUEUE = "logs.queue";
 
-    @Autowired
-    private ArquivosPropertiesConfig leitorProperties;
+	@Autowired private ArquivosPropertiesConfig leitorProperties;
 
-    public static void main(String[] args) {
-        SpringApplication.run(LeitorAppConfig.class, args);
-    }
+	public static void main( String[] args )
+	{
+		SpringApplication.run( LeitorAppConfig.class, args );
+	}
 
-    @Bean
-    public Queue queue() {
-        return new ActiveMQQueue(ARQUIVO_QUEUE);
-    }
+	@Bean public Queue queue( )
+	{
+		return new ActiveMQQueue( ARQUIVO_QUEUE );
+	}
 
-    @Bean
-    public IntegrationFlow fileReadingFlow() {
-        return IntegrationFlows
-                .from(s -> s.file(new File(leitorProperties.getDiretorio()))
-                                .patternFilter("*.log")
-                                .nioLocker(),
-                        e -> e.poller(Pollers.fixedDelay(1000)))
-                .transform(Transformers.fileToString())
-                .handle("notaFiscalHandler","handle")
-                .get();
-    }
+	@Bean public IntegrationFlow fileReadingFlow( )
+	{
+
+		return IntegrationFlows.from( s -> s.file( new File( leitorProperties.getDiretorio( ) ) )
+						.patternFilter( "*.log" ).nioLocker( ),
+				e -> e.poller( Pollers.fixedDelay( 1000 ) ) )
+				.transform( Transformers.fileToString( ) ).handle( "notaFiscalHandler", "handle" )
+				.get( );
+	}
 }

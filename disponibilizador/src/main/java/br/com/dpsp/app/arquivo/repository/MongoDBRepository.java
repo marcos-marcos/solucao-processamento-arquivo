@@ -1,34 +1,37 @@
-package br.com.emmanuelneri.app.arquivo.repository;
+package br.com.dpsp.app.arquivo.repository;
 
-import br.com.emmanuelneri.MongoDBPropertiesConfig;
+import br.com.dpsp.MongoDBPropertiesConfig;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
-public class MongoDBRepository {
+@Component public class MongoDBRepository
+{
 
-    private static final String COLLECTION_NOTA_FISCAL_XML = "notaFiscalXml";
+	private static final String COLLECTION_ARQUIVOS = "logUnificado";
 
-    @Autowired
-    private MongoDBPropertiesConfig properties;
+	@Autowired private MongoDBPropertiesConfig properties;
 
-    public Iterable<Document> find() {
-        return getDatabase().getCollection(COLLECTION_NOTA_FISCAL_XML).find();
-    }
+	public Iterable<Document> find( )
+	{
+		return getDatabase( ).getCollection( COLLECTION_ARQUIVOS ).find( );
+	}
 
-    public Document findFirst(Document document) {
-        return getDatabase().getCollection(COLLECTION_NOTA_FISCAL_XML).find(document).first();
-    }
+	public Document findFirst( Document document )
+	{
+		return getDatabase( ).getCollection( COLLECTION_ARQUIVOS ).find( document ).first( );
+	}
 
-    private MongoDatabase getDatabase() {
-        return client().getDatabase(properties.getDataBase());
-    }
+	private MongoDatabase getDatabase( )
+	{
+		return client( ).getDatabase( properties.getDataBase( ) );
+	}
 
-    private MongoClient client() {
-        return new MongoClient(properties.getHost(), properties.getPort());
-    }
+	private MongoClient client( )
+	{
+		return new MongoClient( properties.getHost( ), properties.getPort( ) );
+	}
 
 }

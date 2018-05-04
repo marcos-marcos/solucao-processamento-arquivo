@@ -1,0 +1,8 @@
+br/com/dpsp/app/log/repository/LogTraceRepository.class
+br/com/dpsp/app/ArquivoLogConsumer.class
+br/com/dpsp/app/log/service/LogTraceService.class
+br/com/dpsp/ProcessadorAppConfig.class
+br/com/dpsp/app/exception/BusinessException.class
+br/com/dpsp/app/exception/FileException.class
+br/com/dpsp/app/log/model/Log.class
+br/com/dpsp/app/ArquivoLogSender.class

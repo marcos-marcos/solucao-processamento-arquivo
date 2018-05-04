@@ -9,42 +9,41 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter
-@EqualsAndHashCode(of = {"numeroNf", "emitente"})
-public class NotaFiscalDTO {
+@Getter @EqualsAndHashCode( of = { "id" } ) public class LogDTO
+{
 
-    private static final String DATE_FORMAT = "dd/MM/yyyy";
+	private static final String DATE_FORMAT = "dd/MM/yyyy";
 
-    private String numeroNf;
-    private EmpresaDTO emitente;
-    private EmpresaDTO destinatario;
-    private Set<ItemNotaFiscalDTO> itens = new HashSet<>();
-    private BigDecimal valor;
-    private BigDecimal valorDesconto;
-    private BigDecimal valorTotal;
+	private BigDecimal id;
+	private String sequencia;
+	private String integrador;
+	private String nomeTransacao;
+	private LocalDate inicioTransacao;
+	private LocalDate fimTransacao;
+	private String origem;
+	private String destino;
+	private String descricao;
+	private String status;
+	private String detalhes;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_FORMAT)
-    private LocalDate dataEmissao;
+	@JsonFormat( shape = JsonFormat.Shape.STRING, pattern = DATE_FORMAT ) private LocalDate dataEmissao;
 
-    public NotaFiscalDTO(String numeroNf, BigDecimal valor, BigDecimal valorDesconto, BigDecimal valorTotal, LocalDate dataEmissao) {
-        this.numeroNf = numeroNf;
-        this.valor = valor;
-        this.valorDesconto = valorDesconto;
-        this.valorTotal = valorTotal;
-        this.dataEmissao = dataEmissao;
-    }
+	public LogDTO( BigDecimal id, String sequencia, String nomeTransacao, String integrador,
+			LocalDate inicioTransacao, LocalDate fimTransacao, String origem, String destino,
+			String descricao, String status, String detalhes )
+	{
+		this.id = id;
+		this.sequencia = sequencia;
+		this.nomeTransacao = nomeTransacao;
+		this.integrador = integrador;
+		this.inicioTransacao = inicioTransacao;
+		this.fimTransacao = fimTransacao;
+		this.origem = origem;
+		this.destino = destino;
+		this.descricao = descricao;
+		this.status = status;
+		this.detalhes = detalhes;
 
-    public void relacionarEmitente(EmpresaDTO emitente) {
-        this.emitente = emitente;
-    }
-
-    public void relacionarDestinatario(EmpresaDTO destinatario) {
-        this.destinatario = destinatario;
-    }
-
-    public void adicionarItem(ItemNotaFiscalDTO item) {
-        this.itens.add(item);
-    }
+	}
 
 }
-
