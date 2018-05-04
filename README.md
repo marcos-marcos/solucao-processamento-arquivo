@@ -112,4 +112,4 @@ Pronto! Todo ambiente será criando através de containers Dockers:
 | ede31b44344e | postgres:9.6                               |   "docker-entrypoint..." | 0.0.0.0:5432->5432/tcp                           | solucaoprocessamentoarquivo_nota-fiscal-db_1       |
 | e5064a06626a | rmohr/activemq:5.12.0                      |   "/bin/bash -c 'bin..." | 0.0.0.0:8161->8161/tcp, 0.0.0.0:61616->61616/tcp | solucaoprocessamentoarquivo_queue_1                |
  
-Observação: Os arquivos para serem processados podem ser copiados para o container do Leitor com o seguinte comando ```docker cp nf.xml solucaoprocessamentoarquivo_leitor-app_1:/tmp/arquivos/nf.xml```
+Observação: Os arquivos para serem processados podem ser copiados para o container do Leitor com o seguinte comando ```docker cp nf.xml solucaoprocessamentoarquivo_leitor-app_1:/tmp/arquivos/nf.xml```# dpsp
